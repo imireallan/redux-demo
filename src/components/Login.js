@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
-import { LOGIN } from "../store/types";
+import { validateUser } from "../store/actions";
+
 const Login = () => {
   const users = useSelector((state) => state.loginSlice.users);
   const dispatch = useDispatch();
@@ -7,7 +8,7 @@ const Login = () => {
   const handleChange = (e) => {
     let payload = e.target.options[e.target.selectedIndex].text;
     console.log(payload);
-    dispatch({ type: LOGIN, payload });
+    dispatch(validateUser(payload));
   };
   return (
     <div className="customDiv">
