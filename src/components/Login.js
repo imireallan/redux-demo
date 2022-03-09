@@ -7,7 +7,6 @@ const Login = () => {
 
   const handleChange = (e) => {
     let payload = e.target.options[e.target.selectedIndex].text;
-    console.log(payload);
     dispatch(validateUser(payload));
   };
   return (

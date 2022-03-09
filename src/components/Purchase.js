@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { ADD_TO_CART } from "../store/types";
+import { purchase } from "../store/productSlice";
 
 const Purchase = () => {
   const products = useSelector((state) => state.productSlice.products);
@@ -8,7 +8,7 @@ const Purchase = () => {
   const handleChange = (e) => {
     let pName = e.target.options[e.target.selectedIndex].text;
     let value = e.target.value;
-    dispatch({ type: ADD_TO_CART, payload: { pName, value } });
+    dispatch(purchase({pName, value}));
   };
   return (
     <div className="customDiv">

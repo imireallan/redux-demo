@@ -1,7 +1,7 @@
-import { LOGIN } from "./types";
+import { loginUser } from "./loginSlice";
 
 export const validateUser = (payload) => (dispatch) => {
   setTimeout(() => {
-    dispatch({ type: LOGIN, payload });
+    dispatch(loginUser(payload));
   }, 2000);
 };
